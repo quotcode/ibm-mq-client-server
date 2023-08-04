@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<employees>
+    <employee>
+        <id>1001</id>
+        <first-name>John</first-name>
+        <last-name>Doe</last-name>
+        <dept>Human Resource</dept>
+    </employee>
+    <employee>
+        <id>1002</id>
+        <first-name>Matt</first-name>
+        <last-name>Pattinson</last-name>
+        <dept>Development</dept>
+    </employee>
+    <employee>
+        <id>1003</id>
+        <first-name>Emily</first-name>
+        <last-name>Jones</last-name>
+        <dept>Operations</dept>
+    </employee>
+    <employee>
+        <id>1004</id>
+        <first-name>Jack</first-name>
+        <last-name>Wilson</last-name>
+        <dept>Development</dept>
+    </employee>
+</employees>
