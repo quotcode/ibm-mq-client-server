@@ -10,15 +10,16 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
+
 	<groupId>com.smtb</groupId>
-	<artifactId>mq-producer</artifactId>
+	<artifactId>mq-consumer-two</artifactId>
 	<version>0.0.1</version>
-	<name>MessageQueueProducer</name>
+	<name>MessageQueueConsumerTwo</name>
 	<description>IBM MQ Application</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
-
+	
 	<dependencies>
 
 		<dependency>
