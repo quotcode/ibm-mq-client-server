@@ -25,44 +25,16 @@ public class QueueProducer {
     @Value("${ibm.mq.queue}")
     String queue;
 
-    public String convertXmlToJson(String xmlFilePath){
-        StringBuilder sb = new StringBuilder();
-        BufferedReader reader = null;
-        logger.info("Started reading the XML file...");
-        try{
-            reader = new BufferedReader(new FileReader(new File(xmlFilePath)));
-            //store XML line
-            String strLine;
-            // read line by line and build string
-            while((strLine=reader.readLine()) != null){
-                sb.append(strLine);
-            }
-        }catch(Exception ex){
-            logger.error(ex);
-        }finally {
-            try{
-                if(reader!=null){
-                    reader.close();
-                }
-            }catch (Exception ex){
-                logger.error(ex);
-            }
-        }
-
-        String xmlToString = sb.toString();
-        JSONObject xmlStringTojson = XML.toJSONObject(xmlToString);
-
-        logger.info("XML Converted to String: -> \n" + xmlToString);
-        logger.info("XML Converted to JSON : -> \n" + xmlStringTojson);
-        return xmlToString;
-    }
-    // send string/text messages
+    // send string/text as a messages
     public void sendMessage(String text) {
         jmsTemplate.convertAndSend(queue, text);
     }
 
-    // send xml messsages
-    public void sendXMLFile(){
-
+    // send xml file as a message
+    public void sendXMLFileAsMsg(String xmlFilePath){
+        File file = new File(xmlFilePath);
+        logger.info("Sending file: " + xmlFilePath + " to a local queue of other QM!");
+        jmsTemplate.convertAndSend(queue, file);
+        logger.info("File: " + xmlFilePath + " sent successfully, to a local queue of other QM!");
     }
 }

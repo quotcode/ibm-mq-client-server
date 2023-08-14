@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.1.3-SNAPSHOT</version>
+        <version>3.1.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -54,6 +54,27 @@
             <version>3.1.2</version>
         </dependency>
 
+        <!--  Database related dependencies: start      -->
+        <!-- msssql-jdbc: for Microsoft SQL Server-->
+        <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <!-- starter-jdbc: for using JdbcTemplate-->
+        <dependency>
+            <groupId>
+                org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+
+        <!-- starter-data-jpa: for Hibernate ORM-->
+        <dependency>
+            <groupId>
+                org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <!--  Database related dependencies: end      -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>

@@ -29,7 +29,7 @@ Implementations:
     [Queue Manager 1: QM1]
     -- queues
     a. one remote queue
-    b. one transition queue
+    b. one transmission queue
     -- channels of QM1:
     a. server connection channel
     b. client connection channel (same name as server connection channel)
@@ -37,7 +37,7 @@ Implementations:
     d. Map each channel pair in "Channel Authentication Record" with following details( channel_profile: channel name, type: Address Map, mca_user_id, ip_address: Current QM IP Address, and client connect as QM. 
     e. Create a springboot application called Producer: 
        --- It will send/put messages to a remote queue of QM1 (via Client Connection Channel: QM1)
-        and messages will travel from remote queue QM1 -> transition queue QM1 -> (via sender-receiver channel) -> lcoal queue QM2
+        and messages will travel from remote queue QM1 -> transmission queue QM1 -> (via sender-receiver channel) -> lcoal queue QM2
     
 
     [Queue Manager 2: QM2]

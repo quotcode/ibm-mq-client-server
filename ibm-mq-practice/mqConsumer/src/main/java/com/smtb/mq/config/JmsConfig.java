@@ -6,6 +6,8 @@ import com.ibm.mq.spring.boot.MQConnectionFactoryFactory;
 
 import jakarta.jms.ConnectionFactory;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.jms.DefaultJmsListenerContainerFactoryConfigurer;
@@ -21,6 +23,7 @@ import java.util.List;
 @Configuration
 public class JmsConfig {
 
+    private static final Logger logger = LogManager.getLogger(JmsConfig.class);
     @Bean
     @ConfigurationProperties("ibm.mq")
     public MQConfigurationProperties qm1ConfigProperties() {
@@ -41,6 +44,10 @@ public class JmsConfig {
             DefaultJmsListenerContainerFactoryConfigurer configurer) {
         DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFactory();
         configurer.configure(factory, connectionFactory);
+        factory.setErrorHandler(t->{
+            logger.error("Error in JmsListener: ", t);
+
+        });
         return factory;
     }
 }

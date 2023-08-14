@@ -89,3 +89,8 @@ SET CHLAUTH(CHL_NEW) TYPE(ADDRESSMAP) ADDRESS('192.168.0.103') MCAUSER('mq_user_
 
 --- client connection channel for QM: SRC_QM
 DEFINE CHANNEL(CHL_NEW) CHLTYPE(CLNTCONN) TRPTYPE(TCP) CONNAME(192.168.0.103) QMNAME(SRC_QM) DESCR('Client-connection to Server')
+
+
+
+Springboot Application Details:
+Consumer: cd C:\Users\Shivam Yadav\Desktop\SMTB\SMTB POC\smtb-ibm-mq-poc\ibm-mq-client-server\ibm-mq-practice\mqConsumer
