@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <departments>
     <department>
-        <id>1</id>
+        <dept-id>1</dept-id>
         <dept-name>Human Resource</dept-name>
     </department>
     <department>
-        <id>2</id>
+        <dept-id>2</dept-id>
         <dept-name>Development</dept-name>
     </department>
     <department>
-        <id>1</id>
+        <dept-id>3</dept-id>
         <dept-name>Information Technology</dept-name>
     </department>
     <department>
-        <id>2</id>
+        <dept-id>4</dept-id>
         <dept-name>Artificial Intelligence</dept-name>
     </department>
     <department>
-        <id>2</id>
+        <dept-id>5</dept-id>
         <dept-name>Operations</dept-name>
     </department>
 </departments>

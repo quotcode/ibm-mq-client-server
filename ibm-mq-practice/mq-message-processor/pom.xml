@@ -1,31 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.1.2</version>
-		<relativePath /> <!-- lookup parent from repository -->
+		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-
 	<groupId>com.smtb</groupId>
-	<artifactId>mq-producer</artifactId>
+	<artifactId>mq-message-processor</artifactId>
 	<version>0.0.1</version>
-	<name>MessageQueueProducer</name>
-	<description>IBM MQ Application</description>
+	<name>MQMessageProcessor</name>
+	<description>Messages will be parsed and stored in DB using this application</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
 
 	<dependencies>
-
-		<dependency>
-			<groupId>com.ibm.mq</groupId>
-			<artifactId>mq-jms-spring-boot-starter</artifactId>
-			<version>3.1.2</version>
-		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -52,7 +44,33 @@
 		</dependency>
 
 		<!-- End: Logging Dependencies -->
+		<dependency>
+			<groupId>com.ibm.mq</groupId>
+			<artifactId>mq-jms-spring-boot-starter</artifactId>
+			<version>3.1.2</version>
+		</dependency>
 
+		<!--  Database related dependencies: start      -->
+		<!-- msssql-jdbc: for Microsoft SQL Server-->
+		<dependency>
+			<groupId>com.microsoft.sqlserver</groupId>
+			<artifactId>mssql-jdbc</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<!-- starter-jdbc: for using JdbcTemplate-->
+		<dependency>
+			<groupId>
+				org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+		</dependency>
+
+		<!-- starter-data-jpa: for Hibernate ORM-->
+		<dependency>
+			<groupId>
+				org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<!--  Database related dependencies: end      -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>

@@ -18,8 +18,10 @@ import com.smtb.mq.config.QueueProducer;
 @EnableJms
 public class MessageQueueProducerApplication implements CommandLineRunner {
     private static final Logger logger = LogManager.getLogger(MessageQueueProducerApplication.class);
-    @Value("${xmlFilePath}")
-    String xmlFilePath;
+    @Value("${xmlFilePath1}")
+    String xmlFilePath1;
+    @Value("${xmlFilePath2}")
+    String xmlFilePath2;
     @Autowired
     QueueProducer producer;
 
@@ -44,7 +46,8 @@ public class MessageQueueProducerApplication implements CommandLineRunner {
 
     public void xmlFileMsgSender() throws IOException {
         logger.info("xmlFileMsgSender() method entry");
-        producer.sendXMLFileAsMsg(xmlFilePath);
+        producer.sendXMLFileAsMsg(xmlFilePath1);
+        producer.sendXMLFileAsMsg(xmlFilePath2);
         logger.info("xmlFileMsgSender() method exit");
     }
 

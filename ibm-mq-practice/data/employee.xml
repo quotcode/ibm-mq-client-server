@@ -1,27 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <employees>
     <employee>
-        <id>1001</id>
+        <emp-id>1001</emp-id>
         <first-name>John</first-name>
         <last-name>Doe</last-name>
-        <dept>Human Resource</dept>
+        <dept-id>1</dept-id>
     </employee>
     <employee>
-        <id>1002</id>
+        <emp-id>1002</emp-id>
         <first-name>Matt</first-name>
         <last-name>Pattinson</last-name>
-        <dept>Development</dept>
+        <dept-id>2</dept-id>
     </employee>
     <employee>
-        <id>1003</id>
+        <emp-id>1003</emp-id>
         <first-name>Emily</first-name>
         <last-name>Jones</last-name>
-        <dept>Operations</dept>
+        <dept-id>3</dept-id>
     </employee>
     <employee>
-        <id>1004</id>
+        <emp-id>1004</emp-id>
         <first-name>Jack</first-name>
         <last-name>Wilson</last-name>
-        <dept>Development</dept>
+        <dept-id>4</dept-id>
+    </employee>
+    <employee>
+        <emp-id>1005</emp-id>
+        <first-name>Kyle</first-name>
+        <last-name>Hardy</last-name>
+        <dept-id>2</dept-id>
+    </employee>
+    <employee>
+        <emp-id>1006</emp-id>
+        <first-name>Matthew</first-name>
+        <last-name>Potts</last-name>
+        <dept-id>3</dept-id>
+    </employee>
+    <employee>
+        <emp-id>1007</emp-id>
+        <first-name>Ryan</first-name>
+        <last-name>Adams</last-name>
+        <dept-id>4</dept-id>
     </employee>
 </employees>

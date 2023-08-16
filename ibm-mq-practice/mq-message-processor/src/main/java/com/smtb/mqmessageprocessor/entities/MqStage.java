@@ -1,10 +1,8 @@
-package com.smtb.mq.entities;
+package com.smtb.mqmessageprocessor.entities;
 
 import jakarta.persistence.*;
-import org.json.JSONObject;
 
 import java.sql.Clob;
-import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Date;
 
@@ -99,3 +97,4 @@ public class MqStage {
                 '}';
     }
 }
+

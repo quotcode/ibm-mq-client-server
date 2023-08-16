@@ -31,7 +31,7 @@ public class CustomMessageListener {
 //        logger.info("Text Message received: " + message);
 //    }
 
-    // to listen xml message
+    // to listen xml message as soon as the listener application is up and ready to listen
     @JmsListener(destination = "Q2", containerFactory = "qm1JmsListenerContainerFactory")
     public void onXMLFileMessageArrival(File message) throws SQLException {
         logger.info("onXMLFileMessageArrival called!");
@@ -42,7 +42,7 @@ public class CustomMessageListener {
         mqStageObj.setDateOfArrival(new Timestamp(System.currentTimeMillis()));
         String res = xmlUtility.convertXmlToString(message);
         Clob c = new SerialClob(res.toCharArray());
-        mqStageObj.setJsonRsp(c);
+        mqStageObj.setFileResponse(c);
 
         mqStageObj.setQueueName("Q2"); //harcoded
 
