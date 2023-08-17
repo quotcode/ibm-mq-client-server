@@ -21,13 +21,13 @@ create table mq_metadta(
 );
 
 create table department(
-	dept_id int not null identity primary key,  
+	dept_id int not null  primary key,  
 	dept_name varchar(30) not null
 );
 
 
 create table employee(
-	emp_id int not null identity primary key,  
+	emp_id int not null  primary key,  
 	emp_first_name varchar(30) not null,
 	emp_last_name varchar(30) not null,
 	dept_id  int foreign key references department(dept_id)

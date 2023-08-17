@@ -18,4 +18,6 @@ public interface MetadataDao extends JpaRepository<MQMetadata, Integer > {
     @Query(value="select file_nodes from mq_metadta where record_typ = :recordType", nativeQuery = true)
     public List<List<String>> getFileNodes(@Param("recordType") String recordType);
 
+    @Query(value="select trgt_table from mq_metadta where record_typ = :recordType", nativeQuery = true)
+    public List<String> getTargetTableName(@Param("recordType") String recordType);
 }
