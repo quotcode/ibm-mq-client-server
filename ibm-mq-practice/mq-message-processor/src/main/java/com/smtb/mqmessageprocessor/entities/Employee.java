@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 public class Employee {
     @Id
     @Column(name = "emp_id")
-    private int empId;
+    private String empId;
 
     @Column(name="emp_first_name")
     private String empFirstName;
@@ -19,18 +19,18 @@ public class Employee {
     private Department department;
 
     public Employee(){}
-    public Employee(int empId, String empFirstName, String empLastName, Department department) {
+    public Employee(String empId, String empFirstName, String empLastName, Department department) {
         this.empId = empId;
         this.empFirstName = empFirstName;
         this.empLastName = empLastName;
         this.department = department;
     }
 
-    public int getEmpId() {
+    public String getEmpId() {
         return empId;
     }
 
-    public void setEmpId(int empId) {
+    public void setEmpId(String empId) {
         this.empId = empId;
     }
 

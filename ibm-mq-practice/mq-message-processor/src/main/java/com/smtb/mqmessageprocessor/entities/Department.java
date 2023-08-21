@@ -7,22 +7,22 @@ import jakarta.persistence.*;
 public class Department {
     @Id
     @Column(name = "dept_id")
-    private int deptId;
+    private String deptId;
 
     @Column(name="dept_name")
     private String departmentName;
 
     public Department(){}
-    public Department(int deptId, String departmentName) {
+    public Department(String deptId, String departmentName) {
         this.deptId = deptId;
         this.departmentName = departmentName;
     }
 
-    public int getDeptId() {
+    public String getDeptId() {
         return deptId;
     }
 
-    public void setDeptId(int deptId) {
+    public void setDeptId(String deptId) {
         this.deptId = deptId;
     }
 

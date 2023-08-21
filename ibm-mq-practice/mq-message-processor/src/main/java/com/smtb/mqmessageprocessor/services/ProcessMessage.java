@@ -8,12 +8,15 @@ import com.smtb.mqmessageprocessor.dao.MetadataDao;
 import com.smtb.mqmessageprocessor.dao.MqStageDao;
 import com.smtb.mqmessageprocessor.entities.Employee;
 import com.smtb.mqmessageprocessor.entities.MqStage;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.XML;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -28,7 +31,6 @@ public class ProcessMessage {
     private static final Logger logger = LogManager.getLogger(ProcessMessage.class);
     @Autowired
     MqStageDao mqStageDao;
-
     @Autowired
     MetadataDao metadataDao;
 
@@ -37,6 +39,9 @@ public class ProcessMessage {
 
     @Autowired
     DepartmentDao departmentDao;
+
+    @Autowired
+    JdbcTemplate jdbcTemplate;
 
     public String convertFromSQLClobToString(Clob clob) throws SQLException, IOException {
         logger.info("Converting SQLClob to String");
@@ -67,7 +72,10 @@ public class ProcessMessage {
             JSONObject jsonObject = jsonArray.getJSONObject(index);
             for (String key : jsonObject.keySet()) {
                 Object value = jsonObject.get(key);
-                recordsMap.put(key, value.toString());
+                // we are converting each value to String for stage table
+                StringBuilder sb = new StringBuilder();
+                sb.append("'").append(value).append("'");
+                recordsMap.put(key, sb.toString());
             }
             // storing records of type: Map<String, Object> in list
             list.add(recordsMap);
@@ -87,12 +95,12 @@ public class ProcessMessage {
             String rspRecordType = rspJSONObj.keySet().stream().toList().get(0); // "employees"
             // metadata table contains below record types
             List<String> exisitingRecordTypes = metadataDao.findAllRecordTypes();
-            // compare the resp record type with table record type and fetch details for specific record type
+            // compare the rspRecordType with metadata table record type and fetch details for specific record type
             if (exisitingRecordTypes.contains(rspRecordType)) {
-                List<String> fileNodes = metadataDao.getFileNodes(rspRecordType).get(0); // ["emp-id","emp-first-name"]
-                // replace square brackets and double quotes which we are there in metadata filenodes records
+                List<String> fileNodes = metadataDao.getFileNodes(rspRecordType).get(0); // ["emp-id","emp-first-name","emp-last-name","dept-id"]
+                // replace square brackets and double quotes which are there in metadata filenodes records
                 fileNodes.replaceAll(e -> e.replaceAll("[\\[\\]\"\"]", ""));
-                JSONObject tableJSONObj = rspJSONObj.getJSONObject(rspRecordType); // {"employee":[{},{},{}]}
+                JSONObject tableJSONObj = rspJSONObj.getJSONObject(rspRecordType);
                 String rspTrgtTableName = tableJSONObj.keySet().stream().toList().get(0); // "employee"
                 JSONArray dataRecordsArrayObj = tableJSONObj.getJSONArray(rspTrgtTableName);   // [{"emp-id":1001, "": ""},...]
                 jsonArrayTOListOfMap(dataRecordsArrayObj, listOfRecordMaps); // [{emp-id=1001, = , ..},...]
@@ -114,13 +122,19 @@ public class ProcessMessage {
                     insertQuery = sb.toString().replaceAll("[\\[\\]]","");
                     insertQuery = insertQuery.replaceAll("-","_");
                     logger.info("Insert Query: " + insertQuery);
+                    if(mainTargetTableName.equalsIgnoreCase("employee")){
+//                        employeeDao.insertRecord(insertQuery);
+                        jdbcTemplate.execute(insertQuery);
+                    } else if (mainTargetTableName.equalsIgnoreCase("department")) {
+//                        departmentDao.insertRecord(insertQuery);
+                        jdbcTemplate.execute(insertQuery);
+                    }
                 }
             }
         } catch (SQLException | IOException e) {
             throw new RuntimeException(e);
         }
     }
-
 
     public String processXMLMessage(int mq_stg_id) throws SQLException, IOException {
         // load

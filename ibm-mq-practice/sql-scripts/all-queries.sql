@@ -40,6 +40,7 @@ insert into mq_stage(qmgr,queue_nm,file_nm,json_rsp,added_at)
 values ('xyz','uvw','abc.xml','dnqfnwfnwggwqwegqwgifnqfqf', (select current_timestamp));
 
 
+
 -- Select queries
 select * from mq_stage;
 select * from mq_metadta;
