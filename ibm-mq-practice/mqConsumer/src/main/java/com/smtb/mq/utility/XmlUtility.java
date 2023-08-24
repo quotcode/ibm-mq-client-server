@@ -45,7 +45,7 @@ public class XmlUtility {
         return xmlStringTojson;
     }
     public String convertXmlToString(File xmlFile) {
-        logger.info("convertXmlToJson() method entry!");
+        logger.info("convertXmlToString() method entry!");
         StringBuilder sb = new StringBuilder();
         BufferedReader reader = null;
         logger.info("Started reading the XML file which came from producer application...");
@@ -70,7 +70,7 @@ public class XmlUtility {
         }
         String xmlToString = sb.toString();
         logger.info("XML Converted to String: -> \n" + xmlToString);
-        logger.info("convertXmlToJson() method exit!");
+        logger.info("convertXmlToString() method exit!");
         return xmlToString;
     }
 

@@ -975,3 +975,84 @@ null
 ACTION:
 null
 --------------------------------------------------------------------
+24 August 2023 at 1:06:35 pm IST[org.springframework.jms.JmsListenerEndpointContainer#0-1] com.ibm.msg.client.commonservices.util.SerializationValidator
+No Allow list functionality enabled - either the properties were not set, or the security permissions prevent them being read
+
+EXPLANATION:
+null
+
+ACTION:
+null
+--------------------------------------------------------------------
+24 August 2023 at 1:29:59 pm IST[org.springframework.jms.JmsListenerEndpointContainer#0-1] com.ibm.msg.client.commonservices.util.SerializationValidator
+No Allow list functionality enabled - either the properties were not set, or the security permissions prevent them being read
+
+EXPLANATION:
+null
+
+ACTION:
+null
+--------------------------------------------------------------------
+24 August 2023 at 1:38:44 pm IST[org.springframework.jms.JmsListenerEndpointContainer#0-1] com.ibm.msg.client.commonservices.util.SerializationValidator
+No Allow list functionality enabled - either the properties were not set, or the security permissions prevent them being read
+
+EXPLANATION:
+null
+
+ACTION:
+null
+--------------------------------------------------------------------
+24 August 2023 at 1:48:12 pm IST[org.springframework.jms.JmsListenerEndpointContainer#0-1] com.ibm.msg.client.commonservices.util.SerializationValidator
+No Allow list functionality enabled - either the properties were not set, or the security permissions prevent them being read
+
+EXPLANATION:
+null
+
+ACTION:
+null
+--------------------------------------------------------------------
+24 August 2023 at 1:56:05 pm IST[org.springframework.jms.JmsListenerEndpointContainer#0-1] com.ibm.msg.client.commonservices.util.SerializationValidator
+No Allow list functionality enabled - either the properties were not set, or the security permissions prevent them being read
+
+EXPLANATION:
+null
+
+ACTION:
+null
+--------------------------------------------------------------------
+24 August 2023 at 2:01:48 pm IST[org.springframework.jms.JmsListenerEndpointContainer#0-1] com.ibm.msg.client.commonservices.util.SerializationValidator
+No Allow list functionality enabled - either the properties were not set, or the security permissions prevent them being read
+
+EXPLANATION:
+null
+
+ACTION:
+null
+--------------------------------------------------------------------
+24 August 2023 at 2:15:29 pm IST[org.springframework.jms.JmsListenerEndpointContainer#0-1] com.ibm.msg.client.commonservices.util.SerializationValidator
+No Allow list functionality enabled - either the properties were not set, or the security permissions prevent them being read
+
+EXPLANATION:
+null
+
+ACTION:
+null
+--------------------------------------------------------------------
+24 August 2023 at 2:29:29 pm IST[org.springframework.jms.JmsListenerEndpointContainer#0-1] com.ibm.msg.client.commonservices.util.SerializationValidator
+No Allow list functionality enabled - either the properties were not set, or the security permissions prevent them being read
+
+EXPLANATION:
+null
+
+ACTION:
+null
+--------------------------------------------------------------------
+24 August 2023 at 2:37:08 pm IST[org.springframework.jms.JmsListenerEndpointContainer#0-1] com.ibm.msg.client.commonservices.util.SerializationValidator
+No Allow list functionality enabled - either the properties were not set, or the security permissions prevent them being read
+
+EXPLANATION:
+null
+
+ACTION:
+null
+--------------------------------------------------------------------

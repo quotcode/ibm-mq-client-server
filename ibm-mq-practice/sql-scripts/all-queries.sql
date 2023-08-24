@@ -44,6 +44,9 @@ values ('xyz','uvw','abc.xml','dnqfnwfnwggwqwegqwgifnqfqf', (select current_time
 -- Select queries
 select * from mq_stage;
 select * from mq_metadta;
+select * from department;
+select * from employee;
+
 
 select getdate(); 
 select CURRENT_TIMESTAMP;
@@ -64,3 +67,10 @@ delete from mq_stage where mq_stg_id >1;
 update  mq_metadta set file_nodes='["emp-id","emp-first-name","emp-last-name","dept-id"]' where metdata_id=1;
 
 /* EOF: Microsoft SQL Server Commands*/
+
+
+SpringBoot MQ Application Directories:
+
+cd C:\Users\Shivam Yadav\Desktop\SMTB\SMTB POC\smtb-ibm-mq-poc\ibm-mq-client-server\ibm-mq-practice\mqConsumer
+cd C:\Users\Shivam Yadav\Desktop\SMTB\SMTB POC\smtb-ibm-mq-poc\ibm-mq-client-server\ibm-mq-practice\mqProducer
+cd C:\Users\Shivam Yadav\Desktop\SMTB\SMTB POC\smtb-ibm-mq-poc\ibm-mq-client-server\ibm-mq-practice\mq-message-processor

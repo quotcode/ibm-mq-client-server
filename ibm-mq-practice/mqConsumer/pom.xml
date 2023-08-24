@@ -54,8 +54,8 @@
             <version>3.1.2</version>
         </dependency>
 
-        <!--  Database related dependencies: start      -->
-        <!-- msssql-jdbc: for Microsoft SQL Server-->
+        <!-- Database related dependencies: start -->
+        <!-- msssql-jdbc: for Microsoft SQL Server -->
         <dependency>
             <groupId>com.microsoft.sqlserver</groupId>
             <artifactId>mssql-jdbc</artifactId>
@@ -74,7 +74,14 @@
                 org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
-        <!--  Database related dependencies: end      -->
+        <!-- Database related dependencies: end -->
+        <!-- For reading and parsing CSV files -->
+        <dependency>
+            <groupId>com.opencsv</groupId>
+            <artifactId>opencsv</artifactId>
+            <version>5.8</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
