@@ -74,3 +74,4 @@ SpringBoot MQ Application Directories:
 cd C:\Users\Shivam Yadav\Desktop\SMTB\SMTB POC\smtb-ibm-mq-poc\ibm-mq-client-server\ibm-mq-practice\mqConsumer
 cd C:\Users\Shivam Yadav\Desktop\SMTB\SMTB POC\smtb-ibm-mq-poc\ibm-mq-client-server\ibm-mq-practice\mqProducer
 cd C:\Users\Shivam Yadav\Desktop\SMTB\SMTB POC\smtb-ibm-mq-poc\ibm-mq-client-server\ibm-mq-practice\mq-message-processor
+

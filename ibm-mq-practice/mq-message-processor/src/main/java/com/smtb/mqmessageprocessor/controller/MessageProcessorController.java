@@ -1,6 +1,8 @@
 package com.smtb.mqmessageprocessor.controller;
 
-import com.smtb.mqmessageprocessor.services.ProcessMessage;
+import com.smtb.mqmessageprocessor.entities.MqStage;
+import com.smtb.mqmessageprocessor.services.ProcessResponse;
+import com.smtb.mqmessageprocessor.services.ProcessXMLResponse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,17 +15,21 @@ import java.sql.SQLException;
 
 @RestController
 public class MessageProcessorController {
+
     @Autowired
-    ProcessMessage processMessage;
+    ProcessResponse processResponse;
 
     private static final Logger logger = LogManager.getLogger(MessageProcessorController.class);
+
     @GetMapping("/heart-beat")
-    public String sendWelcome(){
+    public String sendWelcome() {
         return "Welcome to MQ Message Processor application!";
     }
 
-    @GetMapping("/start-process")
-    public String processMessageHandler(@RequestParam int stage_id ) throws SQLException, IOException {
-        return processMessage.processXMLMessage(stage_id);
+    @GetMapping("/process-msg")
+    public void processMessageHandler(@RequestParam int stage_id) throws SQLException, IOException {
+        logger.info("processMessageHandler() method invoked");
+        processResponse.genericMessageProcess(stage_id);
     }
+
 }
