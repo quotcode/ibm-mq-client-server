@@ -1,13 +1,13 @@
-package com.smtb.mqmessageprocessor;
+package com.smtb.mq;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MqMessageProcessorApplication {
-		
+public class MessageQueueCamelConsumerApplication {
+
 	public static void main(String[] args) {
-		SpringApplication.run(MqMessageProcessorApplication.class, args);
+		SpringApplication.run(MessageQueueCamelConsumerApplication.class, args);
 	}
 
 }

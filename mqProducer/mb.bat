@@ -1,2 +1,2 @@
-title maven build
+title mb:mq-producer
 mvn clean install

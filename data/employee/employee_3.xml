@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<employees>
+    <employee>
+        <emp-id>1010</emp-id>
+        <emp-first-name>Gary</emp-first-name>
+        <emp-last-name>Sobers</emp-last-name>
+        <dept-id>1</dept-id>
+    </employee>
+</employees>

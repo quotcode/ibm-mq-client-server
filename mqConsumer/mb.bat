@@ -1,2 +1,2 @@
-title maven build
-clear && mvn clean install
+title mb:mq-consumer
+mvn clean install

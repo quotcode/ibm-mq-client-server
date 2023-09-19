@@ -7,5 +7,6 @@
     <file url="file://$PROJECT_DIR$/ibm-mq-practice/mqConsumerTwo/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ibm-mq-practice/mqProducer/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ibm-mq-practice/mqProducer/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mq-rest-consumer/src/main/java" charset="UTF-8" />
   </component>
 </project>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<departments>
+    <department>
+        <dept-id>3</dept-id>
+        <dept-name>Information Technology</dept-name>
+    </department>
+    <department>
+        <dept-id>4</dept-id>
+        <dept-name>Artificial Intelligence</dept-name>
+    </department>
+</departments>

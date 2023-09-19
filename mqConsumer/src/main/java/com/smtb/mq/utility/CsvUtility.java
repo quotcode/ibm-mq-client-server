@@ -2,7 +2,6 @@ package com.smtb.mq.utility;
 
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvException;
-import com.smtb.mq.services.CustomMessageListener;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Component;
@@ -17,7 +16,7 @@ import java.util.List;
 
 @Component
 public class CsvUtility {
-    private static final Logger logger = LogManager.getLogger(CustomMessageListener.class);
+    private static final Logger logger = LogManager.getLogger(CsvUtility.class);
 
     // reads a csv file and returns csv contents in String[]
     public String csvReader(File csvFile) {

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<departments>
+    <department>
+        <dept-id>1</dept-id>
+        <dept-name>Human Resource</dept-name>
+    </department>
+    <department>
+        <dept-id>2</dept-id>
+        <dept-name>Development</dept-name>
+    </department>
+</departments>

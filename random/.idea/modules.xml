@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ibm-mq-client-server.iml" filepath="$PROJECT_DIR$/.idea/ibm-mq-client-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/random.iml" filepath="$PROJECT_DIR$/random.iml" />
     </modules>
   </component>
 </project>

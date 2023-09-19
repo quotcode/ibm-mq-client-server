@@ -7,7 +7,13 @@
         <option value="$PROJECT_DIR$/ibm-mq-practice/mqConsumer/pom.xml" />
         <option value="$PROJECT_DIR$/ibm-mq-practice/mqProducer/pom.xml" />
         <option value="$PROJECT_DIR$/ibm-mq-practice/mqConsumerTwo/pom.xml" />
+        <option value="$PROJECT_DIR$/mq-rest-consumer/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/mq-rest-consumer/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">

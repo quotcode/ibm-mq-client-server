@@ -6,17 +6,21 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="mq-consumer" />
         <module name="mq-consumer-two" />
-        <module name="mq-producer" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="mq-consumer" target="17" />
+      <module name="mq-producer" target="17" />
+      <module name="mq-rest-consumer" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="mq-consumer" options="-parameters" />
       <module name="mq-consumer-two" options="-parameters" />
       <module name="mq-producer" options="-parameters" />
+      <module name="mq-rest-consumer" options="-parameters" />
     </option>
   </component>
 </project>

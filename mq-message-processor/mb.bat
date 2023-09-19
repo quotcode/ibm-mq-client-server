@@ -1,2 +1,2 @@
-title mvn build: mq-message-processor
+title mb:mq-processor
 mvn clean install
