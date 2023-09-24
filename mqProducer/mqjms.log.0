@@ -115,3 +115,12 @@ null
 ACTION:
 null
 --------------------------------------------------------------------
+19 September 2023 at 7:19:26 pm IST[main] com.ibm.msg.client.commonservices.util.SerializationValidator
+No Allow list functionality enabled - either the properties were not set, or the security permissions prevent them being read
+
+EXPLANATION:
+null
+
+ACTION:
+null
+--------------------------------------------------------------------

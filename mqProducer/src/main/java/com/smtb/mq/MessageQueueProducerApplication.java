@@ -1,8 +1,11 @@
 package com.smtb.mq;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -16,48 +19,57 @@ import com.smtb.mq.services.QueueProducer;
 
 @SpringBootApplication
 @EnableJms
-//public class MessageQueueProducerApplication implements CommandLineRunner {
-public class MessageQueueProducerApplication  {
-    private static final Logger logger = LogManager.getLogger(MessageQueueProducerApplication.class);
-//    @Value("${xmlFilePath1}")
-//    String xmlFilePath1;
-//    @Value("${xmlFilePath2}")
-//    String xmlFilePath2;
-    @Autowired
-    QueueProducer producer;
+public class MessageQueueProducerApplication implements CommandLineRunner {
+//public class MessageQueueProducerApplication  {
+	private static final Logger logger = LogManager.getLogger(MessageQueueProducerApplication.class);
 
-    public static void main(String[] args) {
-        SpringApplication.run(MessageQueueProducerApplication.class, args);
-        System.out.println("Producer Application Server Started...");
-    }
+	@Autowired
+	QueueProducer producer;
 
-//    // uses command line input from the user
-//    public void textMsgSender() throws IOException {
-//        logger.info("textMsgSender() method entry");
-//        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-//        while (true) {
-//            String line = in.readLine();
-//            if (line == null || line.equals("")) {
-//                break;
-//            }
-//            producer.sendMessage(line);
-//        }
-//        logger.info("textMsgSender() method exit");
-//    }
-//
-//    public void xmlFileMsgSender() throws IOException {
-//        logger.info("xmlFileMsgSender() method entry");
-//        producer.sendXMLFileAsMsg(xmlFilePath1);
-//        producer.sendXMLFileAsMsg(xmlFilePath2);
-//        logger.info("xmlFileMsgSender() method exit");
-//    }
-//
-//    @Override
-//    public void run(String... args) throws Exception {
-//        logger.info("command line runner -> run() method entry");
-//        this.xmlFileMsgSender();
-//
-//        logger.info("command line runner -> run() method exit");
-//    }
+	@Value("${employee.files.path}")
+	private String employeeDir;
+
+	@Value("${department.files.path}")
+	private String departmentDir;
+
+	public static void main(String[] args) {
+		SpringApplication.run(MessageQueueProducerApplication.class, args);
+		System.out.println("Producer Application Server Started...");
+	}
+
+	// text message sender to be passed in run() method of CommandLineRunner
+	public void textMsgSender() throws IOException {
+		logger.info("textMsgSender() method entry");
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		while (true) {
+			String line = in.readLine();
+			if (line == null || line.equals("")) {
+				break;
+			}
+			producer.sendMessage(line);
+		}
+		logger.info("textMsgSender() method exit");
+	}
+
+	// file message sender to be passed in run() method of CommandLineRunner
+	public void fileMessageSender() throws IOException {
+		logger.info("fileMessageSender() method entry");
+		File messageFileDir = new File(employeeDir);
+		// todo: for loop that loads file from the /data path and sends to queue
+		ArrayList<File> fileList = new ArrayList<File>(Arrays.asList(messageFileDir.listFiles()));
+		for (File file : fileList) {
+			producer.sendFileAsMsg(file.toString());
+		}
+
+		logger.info("fileMessageSender() method exit");
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		logger.info("command line runner -> run() method entry");
+		this.fileMessageSender();
+//        this.textMsgSender();
+		logger.info("command line runner -> run() method exit");
+	}
 
 }
