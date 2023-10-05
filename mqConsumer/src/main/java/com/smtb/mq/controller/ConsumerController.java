@@ -25,6 +25,7 @@ public class ConsumerController {
 		return "Welcome to consumer home page!";
 	}
 
+// consume messages using rest endpoint 
 //	@GetMapping("/consume-messages")
 //	public Object consumeMessageHandler() {
 //		logger.info("consumeMessageHandler() handler entry!");
